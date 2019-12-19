@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #container{
+            width: 1000px;
+            height: 700px;
+            background-color: cadetblue;
+            position: relative;
+
+        }
+
+        #container #p1 {
+            width: 500px;
+            height: 100px;
+            display: flex;
+            background-color: brown;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        #container #p2 {
+            width: 100px;
+            height: 500px;
+            display: flex;
+            background-color: brown;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            transform: translate(-50%,0);
+        }
+        #container #p3 {
+            width: 100px;
+            height: 500px;
+            display: flex;
+            background-color: brown;
+            position: absolute;
+            top: 10%;
+            left: 90%;
+            transform: translate(-50%,0);
+
+
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="p1">
+
+    </div>
+    <div id="p2">
+
+    </div>
+    <div id="p3">
+
+    </div>
+
+</div>
+
+<script>
+    var imgArr=["img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg"
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg",
+    ,"img/p8.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg"];
+    var obj1=[1,2,3,4,5,6,7,5,4];
+    var obj2=[1,2,3,5,6,4];
+    var obj3=[1,2,3,5,6,4];
+    function f(index) {
+      var result=(index)*6;
+        return result+"%";
+    }
+
+    //这个索引是按0-n的顺序设置它们展示的偏移
+    var i=0;
+    for(var index of obj1){
+      //该索引是根据数组元素的id,找到对应的图片进行显示
+      console.log(index)
+      var div=document.createElement('div');
+      console.log(div)
+      div.id=index;
+      div.style="width:100px;height:100px;background-image:url("+imgArr[index-1]+"); background-size:cover;margin-left:50px;left:"+f(i++)+";position:absolute;";
+
+      document.getElementById("p1").append(div);
+    }
+    var j=0;
+    for(var index of obj2){
+      //该索引是根据数组元素的id,找到对应的图片进行显示
+      console.log(index)
+      var div=document.createElement('div');
+      console.log(div)
+      div.id=index;
+      div.style="width:100px;height:100px;background-color:green;border:1px solid #000;background-size:cover;margin-top:50px;top:"+f(j++)+";position:absolute;";
+
+      document.getElementById("p2").append(div);
+    }
+    var k=0;
+    for(var index of obj3){
+      //该索引是根据数组元素的id,找到对应的图片进行显示
+      console.log(index)
+      var div=document.createElement('div');
+      console.log(div)
+      div.id=index;
+      div.style="width:100px;height:100px;background-color:green;border:1px solid #000;background-size:cover;margin-top:50px;top:"+f(k++)+";position:absolute;";
+
+      document.getElementById("p3").append(div);
+    }
+
+
+
+</script>
+</body>
+</html>
